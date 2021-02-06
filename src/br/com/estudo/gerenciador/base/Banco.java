@@ -2,6 +2,7 @@ package br.com.estudo.gerenciador.base;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import br.com.estudo.gerenciador.domain.Empresa;
@@ -41,6 +42,29 @@ public class Banco {
 			empresa.setId(empresas.get(empresas.size()-1).getId()+1);
 		}
 		empresas.add(empresa);
+	}
+
+	public void removeEmpresa(Integer id) {
+		
+		Iterator<Empresa> it = empresas.iterator();
+		
+		while(it.hasNext()) {
+			Empresa emp = it.next();
+			
+			if(emp.getId() == id) {
+				it.remove();
+			}
+		}
+		
+	}
+
+	public Empresa buscarEmpresaPorId(Integer id) {
+		for (Empresa empresa : empresas) {
+			if (empresa.getId() == id) {
+				return empresa;
+			}
+		}
+		return null;
 	}
 	
 	
