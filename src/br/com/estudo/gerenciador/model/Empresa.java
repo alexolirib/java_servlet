@@ -1,4 +1,4 @@
-package br.com.estudo.gerenciador.domain;
+package br.com.estudo.gerenciador.model;
 
 import java.util.Date;
 

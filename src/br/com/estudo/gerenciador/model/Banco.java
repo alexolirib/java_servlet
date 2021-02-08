@@ -1,11 +1,9 @@
-package br.com.estudo.gerenciador.base;
+package br.com.estudo.gerenciador.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-
-import br.com.estudo.gerenciador.domain.Empresa;
 
 public class Banco {
 
