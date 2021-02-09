@@ -21,7 +21,7 @@ public class UnicaEntradaServlet extends HttpServlet {
 				
 		
 		String paramAcao = request.getParameter("acao");
-		//padrão de projeto
+		//padrão de projeto command
 		String nomeClasse = "br.com.estudo.gerenciador.acao."+ paramAcao; 
 		
 		String nome = null;

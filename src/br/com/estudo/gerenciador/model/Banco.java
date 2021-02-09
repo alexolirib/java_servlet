@@ -7,7 +7,8 @@ import java.util.List;
 
 public class Banco {
 
-	private static List<Empresa> empresas = new ArrayList<Empresa>();
+	private static List<Empresa> empresas = new ArrayList<>();
+	private static List<Usuario> usuarios = new ArrayList<>();
 	
 	//mock
 	static {
@@ -20,6 +21,17 @@ public class Banco {
 		
 		Banco banco = new Banco();
 		banco.adicionaListaEmpresa(Arrays.asList(empresa,empresa2,empresa3));
+		
+		Usuario u1 = new Usuario();
+		u1.setLogin("nico");
+		u1.setSenha("12345");
+		
+		Usuario u2 = new Usuario();
+		u2.setLogin("ana");
+		u2.setSenha("12345");
+
+		usuarios.add(u1);
+		usuarios.add(u2);
 	}
 	
 	public static List<Empresa> getEmpresas() {
@@ -60,6 +72,16 @@ public class Banco {
 		for (Empresa empresa : empresas) {
 			if (empresa.getId() == id) {
 				return empresa;
+			}
+		}
+		return null;
+	}
+
+	public Usuario existeUsuario(String login, String senha) {
+		for (Usuario us : usuarios) {
+			
+			if (us.ehIgual(login, senha)) {
+				return us;
 			}
 		}
 		return null;
