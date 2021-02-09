@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <form action="${entrada}?acao=ListaEmpresa" method="post">
+    <form action="${entrada}?acao=EditEmpresaAlterar" method="post">
     
 		<input type="hidden" name="id" value="${empresa.id}"  />
         Nome: <input type="text" name="nome" value="${empresa.nome}" />

@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.estudo.gerenciador.model.Banco;
 import br.com.estudo.gerenciador.model.Empresa;
 
-public class ListaEmpresas {
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class ListaEmpresas implements Acao {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Banco banco = new Banco();
 		List<Empresa> listaEmpresa = banco.getEmpresas();
 		
 		request.setAttribute("empresas", listaEmpresa);
-		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
-		rd.forward(request, response);
+		
+		return "forward:listaEmpresas.jsp";
 	}
 }
