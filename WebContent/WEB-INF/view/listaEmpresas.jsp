@@ -11,6 +11,9 @@
 <title>JSTL - Java Standard Taglib</title>
 </head>
 <body>
+	<c:import url="template_logout.jsp"></c:import>
+	Usuario Logado: ${usuarioLogado.login }
+	<br>
 	<!-- Com o jar jstl -->
 	<a href="${entrada }?acao=FormNovaEmpresa">Cadastrar Nova Empresa</a>
 	<br>

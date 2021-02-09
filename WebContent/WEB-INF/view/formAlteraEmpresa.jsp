@@ -9,6 +9,7 @@
 </head>
 <body>
 
+	<c:import url="template_logout.jsp"></c:import>
     <form action="${entrada}?acao=EditEmpresaAlterar" method="post">
     
 		<input type="hidden" name="id" value="${empresa.id}"  />

@@ -8,6 +8,7 @@
 </head>
 <body>
 
+	<c:import url="template_logout.jsp"></c:import>
     <form action="${linkServletNovaEmpresa}?acao=NovaEmpresa" method="post">
 
         Nome: <input type="text" name="nome" />
