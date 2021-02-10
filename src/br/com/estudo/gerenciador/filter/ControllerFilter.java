@@ -1,9 +1,13 @@
-package br.com.estudo.gerenciador.servlet;
+package br.com.estudo.gerenciador.filter;
 
 import java.io.IOException;
 
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,12 +18,13 @@ import br.com.estudo.gerenciador.acao.Acao;
 
 
 //@WebServlet(name = "entrada", urlPatterns = { "/entrada" })
-public class UnicaEntradaServlet extends HttpServlet {
-	
-	private static final long serialVersionUID = 1L;
+public class ControllerFilter implements Filter{
 	//entrada?acao=<nomeAcao>
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
+		
+		HttpServletRequest request = (HttpServletRequest) req;
+		HttpServletResponse response = (HttpServletResponse) resp;
+		
 		String paramAcao = request.getParameter("acao");
 		
 		//padrão de projeto command

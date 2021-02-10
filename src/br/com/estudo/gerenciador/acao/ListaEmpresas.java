@@ -15,6 +15,7 @@ import br.com.estudo.gerenciador.model.Empresa;
 public class ListaEmpresas implements Acao {
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		Banco banco = new Banco();
 		List<Empresa> listaEmpresa = banco.getEmpresas();
 		
